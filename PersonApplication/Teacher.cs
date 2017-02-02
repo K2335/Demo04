@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonApplication
 {
-    class Teacher
+    class Teacher : Person
     {
         public string Room { get; set; }
 
@@ -31,6 +31,9 @@ namespace PersonApplication
         // override base class ToString()-method
         public override string ToString()
         {
+            // Person-luokan ToString + Room
+            // Firstname + Lastbane .. + Room
+            // base viittaa yliluokkaan eli nyt Person-luokkaan
             return base.ToString() + " " + Room;
         }
     }

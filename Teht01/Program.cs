@@ -10,7 +10,9 @@ namespace Teht01
     {
         static void Main(string[] args)
         {
-
+            Elevator kone = new Elevator();
+            kone.Heading = 2;
+            kone.PrintData();
         }
     }
 }

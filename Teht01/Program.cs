@@ -11,8 +11,14 @@ namespace Teht01
         static void Main(string[] args)
         {
             Elevator kone = new Elevator();
-            kone.Heading = 2;
-            kone.PrintData();
+            
+            while (true) {
+                kone.Location = kone.Heading;
+                Console.WriteLine("Anna kerros mihin haluat menna: ");
+                kone.Heading = int.Parse(Console.ReadLine());
+                kone.PrintData();
+               
+            }
         }
     }
 }

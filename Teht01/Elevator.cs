@@ -10,8 +10,9 @@ namespace Teht01
     {
         private readonly int maxfloor = 5;
 
-
+        private int loc;
         private int heading;
+
         public int Heading
         {
             get
@@ -22,7 +23,7 @@ namespace Teht01
             {
                 if (value <= maxfloor) heading = value;
                 if (value > 0) heading = value;
-                else
+                if (value > maxfloor)
                 {
                     Console.WriteLine("Elevator cannot go there!");
                 }
@@ -30,13 +31,35 @@ namespace Teht01
         }
 
 
-        public int Location { get; set; }
+        public int Location {
+            get
+            {
+                return loc;
+            }
+            set
+            {
+                if (value <= maxfloor) loc = value;
+                if (value > 0) loc = value;
+                if (value > maxfloor)
+                {
+                    Console.WriteLine("Elevator cannot go there!");
+                }
+            }
+                }
 
+        // constructor
+        public Elevator()
+        {
+            Heading = 1;
+            Location = 1;
+        }
+        
 
         public void PrintData()
         {
-            Console.WriteLine("Heading: " + Heading);
-            Console.WriteLine("Location: " + Location);
+            Console.WriteLine("Elevator is now in floor: " + Location);
+            Console.WriteLine("Your heading: " + Heading);
+            
         }
     }
 }

@@ -9,8 +9,8 @@ namespace Teht01
     class Elevator
     {
         private readonly int maxfloor = 5;
+        private readonly int minfloor = 1;
 
-        private int loc;
         private int heading;
 
         public int Heading
@@ -26,26 +26,17 @@ namespace Teht01
                 if (value > maxfloor)
                 {
                     Console.WriteLine("Elevator cannot go there!");
+                    heading = maxfloor;
+                }
+                if (value < minfloor)
+                {
+                    Console.WriteLine("Elevator cannot go there!");
+                    heading = minfloor;
                 }
             }
         }
 
-
-        public int Location {
-            get
-            {
-                return loc;
-            }
-            set
-            {
-                if (value <= maxfloor) loc = value;
-                if (value > 0) loc = value;
-                if (value > maxfloor)
-                {
-                    Console.WriteLine("Elevator cannot go there!");
-                }
-            }
-                }
+        public int Location { get; set; }
 
         // constructor
         public Elevator()
